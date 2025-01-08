@@ -3,12 +3,8 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    env:
-      secret1: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
-      - run: echo $secret1
-      - run: echo "$secret1"
-      - run: echo {{ secrets.GITHUB_TOKEN }}
-      - run: echo "🍏 This job's status is ${{ job.status }} !!!."
-
+      - name: show1
+        env:
+          secret1: ${{ secrets.GITHUB_TOKEN }}
+        run: echo "${{ secrets.GITHUB_TOKEN }}" && echo "${{ env.secret1 }}" && echo $secret1 && echo "$secret1"
