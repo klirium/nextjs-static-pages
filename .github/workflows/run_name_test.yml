@@ -8,3 +8,10 @@ jobs:
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - run: echo "🍏 This job's status is ${{ job.status }} !!!."
+  Explore-GitHub-Actions2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 2 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 2 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 2 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "🍏 2 This job's status is ${{ job.status }} !!!."
