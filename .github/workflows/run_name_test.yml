@@ -1,8 +1,11 @@
-name: Run name test
+name: Build workflow
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  build:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node: [14, 16]
     steps:
       - name: show1
         env:
