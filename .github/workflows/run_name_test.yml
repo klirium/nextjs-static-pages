@@ -17,5 +17,15 @@ jobs:
           echo "Value2: $value2"
           echo "Value3: ${{ secrets.GITHUB_TOKEN }}"
           echo Value4: $value2
-
-
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cache node modules
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
