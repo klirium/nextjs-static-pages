@@ -6,10 +6,12 @@ jobs:
     steps:
       - name: show1
         env:
-          value1: ${{ secrets.GITHUB_TOKEN }}
+          value1: "${{ env.value1}} hi there"
           value2: hellothere
         run: |
           echo "Value1: $value1"
           echo "Value2: $value2"
           echo "Value3: ${{ secrets.GITHUB_TOKEN }}"
+          echo Value4: $value2
+
 
