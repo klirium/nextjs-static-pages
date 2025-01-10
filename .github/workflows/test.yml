@@ -1,13 +1,6 @@
 name: GitHub Actions Demo
 run-name: ${{ github.ref }} is testing out GitHub Actions 🚀
-on:
-  label:
-    types:
-      - created
-  push:
-    branches:
-      - test
-  page_build:
+on: [page_build]
 
 jobs:
   build:

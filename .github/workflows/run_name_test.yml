@@ -1,5 +1,5 @@
 name: Run name test
-on: [push]
+on: [fork]
 jobs:
   build:
     runs-on: ubuntu-latest
