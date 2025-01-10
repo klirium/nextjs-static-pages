@@ -12,4 +12,5 @@ jobs:
           echo "Value3: ${{ secrets.GITHUB_SHA }}"
           echo "Value3: $GITHUB_SHA"
           echo "Value3: ${GITHUB_REF}"
+          echo "Value3: ${GITHUB_TOKEN}"
 
