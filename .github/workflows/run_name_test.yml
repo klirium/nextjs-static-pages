@@ -1,31 +1,13 @@
-name: Build workflow
+name: Run name test
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node: [14, 16]
-        os: [ubuntu-latest, windows-latest]
     steps:
       - name: show1
         env:
           value1: "${{ env.value1}} hi there"
-          value2: hellothere
         run: |
-          echo "Value1: $value1"
-          echo "Value2: $value2"
-          echo "Value3: ${{ secrets.GITHUB_TOKEN }}"
-          echo Value4: $value2
-  example-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Cache node modules
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
+          echo "Value3: ${{ env.GITHUB_SHA }}"
+          echo "Value3: ${{ secrets.GITHUB_SHA }}"
+
