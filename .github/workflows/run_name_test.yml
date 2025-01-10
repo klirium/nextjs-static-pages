@@ -10,4 +10,5 @@ jobs:
         run: |
           echo "Value3: ${{ env.GITHUB_SHA }}"
           echo "Value3: ${{ secrets.GITHUB_SHA }}"
+          echo "Value3: $GITHUB_SHA"
 
