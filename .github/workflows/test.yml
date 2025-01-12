@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: ${{ github.event.head_commit.message }} is testing out GitHub Actions 🚀
+run-name: ${{ github.event.workflow_run.head_commit.message }} is testing out GitHub Actions 🚀
 on:
   pull_request:
     branches:
@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'data2-')
+    if: startsWith(github.head_ref, 'data-')
     steps:
       - name: show1
         env:
