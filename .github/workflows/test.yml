@@ -3,7 +3,7 @@ run-name: ${{ github.event.pull_request.title }} is testing out GitHub Actions ð
 on:
   pull_request:
     branches:
-      - master2
+      - master
 
 
 jobs:
