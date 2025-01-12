@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    if: startsWith(github.head_ref, 'data-')
     steps:
       - name: show1
         env:
