@@ -3,7 +3,7 @@ run-name: ${{ github.event.head_commit.message }} is testing out GitHub Actions 
 on:
   pull_request:
     branches:
-      - master
+      - master2
 
 
 jobs:
