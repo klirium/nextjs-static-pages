@@ -17,3 +17,12 @@ jobs:
           value1: "${{ env.value1}} hi there"
         run: |
           echo "Value3"
+
+  build2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: show1
+        env:
+          value1: "${{ env.value1}} hi there"
+        run: |
+          echo "Value3"
