@@ -3,13 +3,13 @@ run-name: ${{ github.event.head_commit.message }} is testing out GitHub Actions 
 on:
   pull_request:
     branches:
-      - master2
+      - master
 
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: startsWith(github.head_ref, 'data-')
+    if: startsWith(github.head_ref, 'data2-')
     steps:
       - name: show1
         env:
