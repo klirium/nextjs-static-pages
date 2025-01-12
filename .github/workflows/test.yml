@@ -3,9 +3,9 @@ name: GitHub Actions Demo
 on:
   push:
     branches:
-      - master2
+      - master
     tags:
-      - v1
+      - v1.*
 
 jobs:
   build:
