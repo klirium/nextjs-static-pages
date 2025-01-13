@@ -1,6 +1,9 @@
 name: GitHub Actions Demo
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - master
 
 jobs:
   print-tag:
