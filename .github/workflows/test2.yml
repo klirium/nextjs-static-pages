@@ -1,4 +1,5 @@
 name: GitHub Actions Demo
+run-name: 'Message: [${{ github.event.commits[0].message }}]'
 on:
   push:
     branches:
