@@ -1,5 +1,5 @@
 name: GitHub Actions Demo
-run-name: 'Message: [${{ github.event.commits[0].message }}]'
+run-name: "Message: [${{ github.event.commits[0].message }}]"
 on:
   push:
     branches:
@@ -13,7 +13,6 @@ jobs:
   print_context:
     runs-on: ubuntu-latest
     steps:
-      - env:
-          EVENT_CONTEXT: ${{ toJSON(github.event) }}
+      - name: show
         run: |
-          echo $EVENT_CONTEXT
+          echo ${{ toJSON(github.event) }}
