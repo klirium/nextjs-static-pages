@@ -2,7 +2,6 @@ on:
   page_build:
 
 
-
 jobs:
   triage:
     permissions: write-all
