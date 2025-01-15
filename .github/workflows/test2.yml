@@ -1,12 +1,15 @@
+name: PR Workflow
+
 on:
-  pull_request_target:
+  pull_request:
     branches:
-      - test/**
+      - releases/1
     types:
       - opened
+
 jobs:
   run_if:
-    if: startsWith(github.head_ref, 'releases/')
+    if: startsWith(github.head_ref, 'test/1')
     runs-on: ubuntu-latest
     steps:
-      - run: echo "The head of this PR starts with 'releases/'"
+      - run: echo "The head of this PR starts with 'test/1'"
