@@ -1,12 +1,12 @@
 on:
-  page_build:
-
-
+  pull_request_target:
+    branches:
+      - master
+    types:
+      - opened
 jobs:
-  triage:
-    permissions: write-all
+  run_if:
+    if: startsWith(github.head_ref, 'releases/')
     runs-on: ubuntu-latest
     steps:
-      - name: "Comment about changes we can't accept"
-        run: |
-          echo "Hello, world!"
+      - run: echo "The head of this PR starts with 'releases/'"
