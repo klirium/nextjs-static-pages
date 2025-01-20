@@ -8,8 +8,7 @@ jobs:
     defaults:
       run:
         shell: bash
-    runs-on:
-      group: "ubuntu-runners"
+    runs-on: ubuntu-latest
     steps:
       - name: show1
         shell: bash
@@ -28,4 +27,6 @@ jobs:
       options: --cpus 1
     steps:
       - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+      - name: Check for dockerenv file2
         run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
