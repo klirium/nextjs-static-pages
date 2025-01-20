@@ -1,12 +1,25 @@
+name: Upload data
+
 on:
-  pull_request_target:
-    branches:
-      - master
-    types:
-      - opened
+  workflow_dispatch:
+    inputs:
+      value1:
+        description: 'PR number'
+        required: false
+        default: '0'
+
 jobs:
-  run_if:
-    if: startsWith(github.head_ref, 'releases/')
+  upload:
     runs-on: ubuntu-latest
+
     steps:
-      - run: echo "The head of this PR starts with 'releases/'"
+      - name: Save PR number
+        env:
+          PR_NUMBER: ${{ github.event.number }}
+        run: |
+          mkdir -p ./pr
+          echo $PR_NUMBER > ./pr/pr_number
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pr_number
+          path: pr/
