@@ -5,9 +5,27 @@ on:
 
 jobs:
   build:
+    defaults:
+      run:
+        shell: bash
     runs-on:
-      group: 'ubuntu-runners'
+      group: "ubuntu-runners"
     steps:
       - name: show1
+        shell: bash
         run: |
           echo "Value3"
+  container-test-job:
+    runs-on: ubuntu-latest
+    container:
+      image: node:18
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
+    steps:
+      - name: Check for dockerenv file
+        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
