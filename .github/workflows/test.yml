@@ -27,6 +27,7 @@ jobs:
       options: --cpus 1
     steps:
       - name: Check for dockerenv file
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+        run: |
+          echo "test" > /volume_mount/testfile.txt
       - name: Check for dockerenv file2
-        run: (ls /.dockerenv && echo Found dockerenv) || (echo No dockerenv)
+        run: ls /volume_mount
