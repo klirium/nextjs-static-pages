@@ -1,3 +1,4 @@
+
 on:
   workflow_dispatch:
     inputs:
@@ -11,6 +12,6 @@ on:
 
 jobs:
   test:
-    runs-on: [self-hosted, "${{inputs.chosen-os}}"]
+    runs-on: ${{inputs.chosen-os}}
     steps:
       - run: echo Hello world!
