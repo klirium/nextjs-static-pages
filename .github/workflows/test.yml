@@ -17,19 +17,19 @@ jobs:
   container-test-job:
     runs-on: ubuntu-latest
     permissions: write-all
-    # container:
-    #   image: node:18
-    #   env:
-    #     NODE_ENV: development
-    #   ports:
-    #     - 80
-    #   volumes:
-    #     - my_docker_volume:/volume_mount
-    #   options: --cpus 1
+    container:
+      image: node:18
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
     steps:
       - name: Check for dockerenv file
         run: |
-          mkdir -p ./volume_mount
-          echo "test" > ./volume_mount/testfile.txt
+          mkdir -p ./volume_mount1
+          echo "test" > ./volume_mount1/testfile.txt
       - name: Check for dockerenv file2
-        run: ls ./volume_mount
+        run: ls ./volume_mount1
