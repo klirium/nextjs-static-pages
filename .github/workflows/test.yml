@@ -5,6 +5,7 @@ on:
 
 jobs:
   build:
+    name: 'Hey there, i am a build job'
     defaults:
       run:
         shell: bash
