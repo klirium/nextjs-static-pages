@@ -16,6 +16,7 @@ jobs:
           echo "Value3"
   container-test-job:
     runs-on: ubuntu-latest
+    permissions: write-all
     # container:
     #   image: node:18
     #   env:
