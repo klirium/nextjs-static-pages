@@ -12,6 +12,6 @@ on:
 
 jobs:
   test:
-    runs-on: ${{inputs.chosen-os}}
+    runs-on: "${{inputs.chosen-os}}"
     steps:
       - run: echo Hello world!
