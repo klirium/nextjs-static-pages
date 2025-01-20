@@ -29,7 +29,6 @@ jobs:
     steps:
       - name: Check for dockerenv file
         run: |
-          mkdir -p ./volume_mount1
-          echo "test" > ./volume_mount1/testfile.txt
+          echo "test" > ./volume_mount/testfile.txt
       - name: Check for dockerenv file2
-        run: ls ./volume_mount1
+        run: ls ./volume_mount
