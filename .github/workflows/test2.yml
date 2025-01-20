@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       value1:
-        description: 'PR number'
+        description: "PR number"
         required: false
-        default: '0'
+        default: "0"
 
 jobs:
   upload:
@@ -19,7 +19,8 @@ jobs:
         run: |
           mkdir -p ./pr
           echo $PR_NUMBER > ./pr/pr_number
-      - uses: actions/upload-artifact@v4
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
         with:
           name: pr_number
           path: pr/
