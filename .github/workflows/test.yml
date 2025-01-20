@@ -1,13 +1,12 @@
 name: GitHub Actions Demo
 run-name: ${{ github.ref }} is testing out GitHub Actions 🚀
-on: [page_build]
+on:
+  push:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-runners
     steps:
       - name: show1
-        env:
-          value1: "${{ env.value1}} hi there"
         run: |
-          echo "Value3: ${{ env.GITHUB_SHA }}"
+          echo "Value3"
