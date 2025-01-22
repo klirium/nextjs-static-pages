@@ -10,6 +10,7 @@ jobs:
       - name: Run a script using actions/toolkit
         run: |
           echo "::notice file=./tsconfig.json,line=4,col=5,endColumn=7::Missing semicolon"
+          echo "::error file=app.js,line=1,col=5,endColumn=7,title=my title::Missing semicolon1"
 
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
