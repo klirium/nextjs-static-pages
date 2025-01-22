@@ -1,16 +1,14 @@
-on:
-  push:
-
+on: push
 jobs:
-  test:
-    runs-on: windows-latest
-    env:
-      MY_NAME: "Mona"
+  generate-a-secret-output:
+    runs-on: ubuntu-latest
     steps:
-      - name: bash-version
+      - id: sets-a-secret
+        name: Generate, mask, and output a secret
         run: |
-          echo "hi there ${{env.MY_NAME}}"
-          echo "::add-mask::$MY_NAME"
-          echo "hi ${{env.MY_NAME}}"
-
-#act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
+          the_secret=$((RANDOM))
+          echo "::add-mask::$the_secret"
+          echo "secret-number=$the_secret" >> "$GITHUB_OUTPUT"
+      - name: Use that secret output (protected by a mask)
+        run: |
+          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
