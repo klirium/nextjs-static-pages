@@ -4,10 +4,11 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-    env:
-      MY_NAME: "Mona The Octocat"
+
     steps:
       - name: bash-version
+        env:
+          MY_NAME: "Mona The Octocat"
         run: |
           echo "$MY_NAME"
           echo "::add-mask::$MY_NAME"
