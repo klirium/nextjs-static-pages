@@ -4,14 +4,13 @@ on:
 jobs:
   test:
     runs-on: windows-latest
-
+    env:
+      MY_NAME: "Mona"
     steps:
       - name: bash-version
-        env:
-          MY_NAME: "Mona The Octocat"
         run: |
           echo "hi there ${{env.MY_NAME}}"
-          echo "::add-mask::${{env.MY_NAME}}"
+          echo "::add-mask::$MY_NAME"
           echo "hi ${{env.MY_NAME}}"
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
