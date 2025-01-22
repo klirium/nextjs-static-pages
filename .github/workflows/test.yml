@@ -14,7 +14,9 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - run: echo Hello world!
+      - run: |
+        echo Hello world!
+        ::debug::hi there
 
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
