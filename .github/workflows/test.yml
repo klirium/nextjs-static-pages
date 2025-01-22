@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Run a script using actions/toolkit
         run: |
-          echo "::debug::Set the Octocat variable"
+          echo "::notice file=app.js,line=1,col=5,endColumn=7::Missing semicolon"
 
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
