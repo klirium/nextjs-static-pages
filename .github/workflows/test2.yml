@@ -12,6 +12,9 @@ on:
 
 jobs:
   test:
-    runs-on: "${{inputs.chosen-os}}"
+    runs-on: windows-latest
     steps:
       - run: echo Hello world!
+
+
+#act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
