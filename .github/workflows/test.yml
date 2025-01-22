@@ -8,8 +8,6 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Run a script using actions/toolkit
-        env:
-          ACTIONS_STEP_DEBUG: true
         run: |
           echo "::debug::Set the Octocat variable"
 
