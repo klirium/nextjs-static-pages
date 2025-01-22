@@ -1,0 +1,35 @@
+name: GitHub Actions Demo
+run-name: ${{ github.ref }} is testing out GitHub Actions 🚀
+on:
+  push:
+
+jobs:
+  build:
+    name: 'Hey there, i am a build job'
+    defaults:
+      run:
+        shell: bash
+    runs-on: ubuntu-latest
+    steps:
+      - name: show1
+        shell: bash
+        run: |
+          echo "Value3"
+  container-test-job:
+    runs-on: ubuntu-latest
+    permissions: write-all
+    container:
+      image: node:18
+      env:
+        NODE_ENV: development
+      ports:
+        - 80
+      volumes:
+        - my_docker_volume:/volume_mount
+      options: --cpus 1
+    steps:
+      - name: Check for dockerenv file
+        run: |
+          echo "test" > /volume_mount/testfile.txt
+      - name: Check for dockerenv file2
+        run: ls /volume_mount
