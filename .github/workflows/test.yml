@@ -7,9 +7,12 @@ jobs:
   test:
     runs-on: windows-latest
     steps:
-      - run: |
-          echo Hello world!
-          ::debug::hi there
+      - uses: actions/checkout@v2
+      - name: Run a script using actions/toolkit
+        run: |
+          node -e "const core = require('@actions/core'); core.debug('Debug message'); core.warning('Warning message'); core.error('Error message');"- run: |
+            echo Hello world!
+            ::debug::hi there
 
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
