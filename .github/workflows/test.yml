@@ -1,14 +1,7 @@
 
 on:
-  workflow_dispatch:
-    inputs:
-      chosen-os:
-        required: true
-        type: choice
-        options:
-          - Ubuntu
-          - macOS
-          - ubuntu-latest
+  push:
+
 
 jobs:
   test:
