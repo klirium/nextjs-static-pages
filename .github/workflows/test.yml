@@ -11,7 +11,7 @@ jobs:
         env:
           ACTIONS_STEP_DEBUG: true
         run: |
-          ::debug::"hi there"
+          echo "::debug::Set the Octocat variable"
 
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
