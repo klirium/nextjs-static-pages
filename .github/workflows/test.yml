@@ -10,8 +10,8 @@ jobs:
         env:
           MY_NAME: "Mona The Octocat"
         run: |
-          echo "$MY_NAME"
+          echo "hi there $MY_NAME"
           echo "::add-mask::$MY_NAME"
-          echo "$MY_NAME"
+          echo "hi $MY_NAME"
 
 #act --workflows ".github/workflows/test2.yml" --job "test" --secret-file "" --var-file "" --input-file "" -P windows-latest=-self-hosted --eventpath ""
