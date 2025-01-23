@@ -6,14 +6,9 @@ jobs:
       - id: sets-a-secret
         name: Generate, mask, and output a secret
         run: |
-          the_secret=$((RANDOM))
-          echo "secret-number=$the_secret" >> "$GITHUB_OUTPUT"
-      - name: Use that secret output (protected by a mask)
-        run: |
-          echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
-      - name: Show GITHUB_OUTPUT content
-        run: echo $GITHUB_OUTPUT
-      - run: |
-          echo "::stop-commands::1"
+          echo '::warning:: This is a warning message, to demonstrate that commands are being processed.'
+          stopMarker=$(uuidgen)
+          echo "::stop-commands::$stopMarker"
           echo '::warning:: This will NOT be rendered as a warning, because stop-commands has been invoked.'
-          echo "The secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
+          echo "::$stopMarker::"
+          echo '::warning:: This is a warning again, because stop-commands has been turned off.'
