@@ -15,4 +15,5 @@ jobs:
         run: echo $GITHUB_OUTPUT
       - run: |
           echo "::stop-commands::1"
+          echo '::warning:: This will NOT be rendered as a warning, because stop-commands has been invoked.'
           echo "The secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
