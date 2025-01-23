@@ -13,3 +13,4 @@ jobs:
           echo "the secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
       - name: Show GITHUB_OUTPUT content
         run: echo $GITHUB_OUTPUT
+      - run: echo "The secret number is ${{ steps.sets-a-secret.outputs.secret-number }}"
