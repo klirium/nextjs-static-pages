@@ -6,9 +6,4 @@ jobs:
       - id: sets-a-secret
         name: Generate, mask, and output a secret
         run: |
-          echo '::warning:: This is a warning message, to demonstrate that commands are being processed.'
-          stopMarker=$(uuidgen)
-          echo "::stop-commands::$stopMarker"
-          echo '::warning:: This will NOT be rendered as a warning, because stop-commands has been invoked.'
-          echo "::$stopMarker::"
-          echo '::warning:: This is a warning again, because stop-commands has been turned off.'
+          echo "$PATH"
