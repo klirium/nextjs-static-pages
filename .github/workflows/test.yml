@@ -9,8 +9,6 @@ jobs:
       Greeting: Hello
     steps:
       - name: Hey
-        id: hey-id
         run: echo "action $GITHUB_ACTION"
       - name: HeyA
-        id: hey-idA
         run: echo "action $GITHUB_ACTION"
