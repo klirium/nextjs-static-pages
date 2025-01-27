@@ -8,4 +8,5 @@ jobs:
     env:
       Greeting: Hello
     steps:
-      - run: echo "action $GITHUB_ACTION"
+      - name: Hey
+        run: echo "action $GITHUB_ACTION"
