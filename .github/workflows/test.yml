@@ -5,12 +5,7 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
-    if: ${{ vars.DAY_OF_WEEK == 'Monday' }}
     env:
       Greeting: Hello
     steps:
-      - name: "Say Hello Mona it's Monday"
-        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
-        run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK!"
-        env:
-          First_Name: Mona
+      - run: echo "action $GITHUB_ACTION"
