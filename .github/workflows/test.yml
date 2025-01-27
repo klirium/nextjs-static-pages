@@ -3,11 +3,13 @@ on: push
 env:
   continue: true
   time: 3
+
 jobs:
   job1:
+    env:
+      continue2: false
     runs-on: ubuntu-latest
-    if: ${{ '$continue' == true }}
     steps:
-      - continue-on-error: ${{ fromJSON(env.continue) }}
-        timeout-minutes: ${{ fromJSON(env.time) }}
-        run: echo "sfs"
+      - run: env"
+        env:
+          continue3: true
