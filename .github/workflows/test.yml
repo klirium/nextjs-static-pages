@@ -11,4 +11,4 @@ jobs:
       - name: Hey
         run: echo "action $GITHUB_ACTION"
       - name: HeyA
-        run: echo "action $GITHUB_ACTION"
+        run: echo "action $GITHUB_ACTION_PATH"
