@@ -5,6 +5,7 @@ env:
 jobs:
   greeting_job:
     runs-on: ubuntu-latest
+    if: ${{ vars.DAY_OF_WEEK == 'Monday' }}
     env:
       Greeting: Hello
     steps:
