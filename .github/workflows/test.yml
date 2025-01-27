@@ -6,9 +6,8 @@ env:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    if: ${{ github.env.continue == true }}
+    if: ${{ '$continue' == true }}
     steps:
       - continue-on-error: ${{ fromJSON(env.continue) }}
         timeout-minutes: ${{ fromJSON(env.time) }}
-        if: ${{ env.continue == true }}
-        run: echo ...
+        run: echo "sfs"
