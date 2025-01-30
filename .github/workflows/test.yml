@@ -42,3 +42,6 @@ jobs:
           echo "hey2: ${{toJson(env)}}"
           echo "hey3: ${{env}}"
           echo "hey4: ${{env.hey3}}"
+          echo "hey5: ${{env.ENV_CONTEXT}}"
+          echo "hey6: ${{env.hey2}}"
+          echo "hey7: ${{env.hey}}"
