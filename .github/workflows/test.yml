@@ -11,5 +11,8 @@ jobs:
       - name: Dump GitHub context
         run: |
           echo "val=${{ secrets.github_token }}" >> $GITHUB_ENV
+          echo "val2=${{ secrets.GITHUB_TOKEN }}" >> $GITHUB_ENV
       - name: Dump GitHub context2
-        run: echo $val
+        run: |
+          echo $val
+          echo $val2
