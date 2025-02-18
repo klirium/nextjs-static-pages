@@ -7,5 +7,5 @@ jobs:
     steps:
       - shell: bash
         run: |
-          echo ${{github.workspace}} && echo ${{github.event_name}} && echo ${{github.sha}}
-          echo ${{github.workspace}} && echo ${{github.event_name}} && echo ${{github.sha}}
+          echo ${{github.workspace}} && echo ${{github.event_name}} && echo ${{github.sha}} && echo ${{github.event_name}} && echo ${{github.sha}} && echo ${{github.event_name}} && echo ${{github.sha}} && echo ${{github.event_name}} && echo ${{github.sha}} && echo ${{github.event_name}} && echo ${{github.sha}} && echo ${{github.event_name}} && echo ${{github.sha}} && echo ${{github.event_name}} && echo ${{github.sha}}
+
