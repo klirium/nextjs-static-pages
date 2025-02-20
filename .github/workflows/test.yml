@@ -6,6 +6,7 @@ jobs:
     continue-on-error: true
     strategy:
       fail-fast: true
+      max-parallel: 1
       matrix:
         shouldFail:
           - id: 1
