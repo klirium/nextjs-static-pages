@@ -7,12 +7,18 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        shouldFail: [false, false, true, false]
+        shouldFail:
+          - id: 1
+            value: false
+          - id: 2
+            value: true
+          - id: 3
+            value: false
     steps:
       - name: Run step
         run: |
-          echo "Running echo step, shouldFail: ${{ matrix.shouldFail }}"
-          if [ ${{ matrix.shouldFail }} = "true" ]; then
+          echo "Running echo step, id: ${{ matrix.shouldFail.id }} shouldFail: ${{ matrix.shouldFail.value }}"
+          if [ ${{ matrix.shouldFail.value }} = "true" ]; then
             echo "Error"
             exit 1
           else
