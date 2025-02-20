@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    continue-on-error: ${{matrix.shouldFail.value && matrix.shouldFail.id == 2}}
+    continue-on-error: ${{matrix.shouldFail.value }}
     strategy:
       fail-fast: false
       max-parallel: 1
