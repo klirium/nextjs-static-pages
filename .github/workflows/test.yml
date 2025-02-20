@@ -3,7 +3,7 @@ on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
-    continue-on-error: false
+    continue-on-error: ${{matrix.shouldFail.value && matrix.shouldFail.id == 2}}
     strategy:
       fail-fast: false
       max-parallel: 1
@@ -18,12 +18,12 @@ jobs:
           - id: 4
             value: false
           - id: 5
-            value: false
+            value: true
     steps:
       - name: Run step
         run: |
           echo "Running echo step, id: ${{ matrix.shouldFail.id }} shouldFail: ${{ matrix.shouldFail.value }}"
-          if [ ${{ matrix.shouldFail.value }} ]; then
+          if [ ${{ matrix.shouldFail.value }} = "true" ]; then
             echo "Error"
             exit 1
           else
