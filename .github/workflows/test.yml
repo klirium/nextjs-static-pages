@@ -23,7 +23,7 @@ jobs:
       - name: Run step
         run: |
           echo "Running echo step, id: ${{ matrix.shouldFail.id }} shouldFail: ${{ matrix.shouldFail.value }}"
-          if [ ${{ matrix.shouldFail.value }} = "true" ]; then
+          if [ ${{ matrix.shouldFail.value }} ]; then
             echo "Error"
             exit 1
           else
