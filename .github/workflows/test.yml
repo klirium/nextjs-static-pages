@@ -2,7 +2,7 @@ on:
   workflow_dispatch:
     inputs:
       value2:
-        description: "Dataflow to run"
+        description: "Dataflow to run2"
         required: true
         default: "test1"
         type: string
