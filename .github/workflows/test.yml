@@ -1,7 +1,7 @@
 on:
   workflow_dispatch:
     inputs:
-      value1:
+      value2:
         description: "Dataflow to run"
         required: true
         default: "test1"
@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Run step
         run: |
-          echo "Running echo step 1: ${{  github.event.inputs.value1 }}"
+          echo "Running echo step 1: ${{  github.event.inputs.value2 }}"
