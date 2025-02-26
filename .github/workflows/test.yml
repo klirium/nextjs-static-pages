@@ -4,7 +4,7 @@ on:
       value1:
         description: "Dataflow to run"
         required: true
-        default: "test1"
+        default: "test2"
         type: string
 jobs:
   test:
