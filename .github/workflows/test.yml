@@ -1,38 +1,16 @@
-on: [push]
-
+on:
+  workflow_dispatch:
+    inputs:
+      value1:
+        description: "Dataflow to run"
+        required: true
+        default: "test1"
+        type: string
 jobs:
   test:
     runs-on: ubuntu-latest
-    continue-on-error: ${{matrix.shouldFail.value }}
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        shouldFail:
-          - id: 1
-            value: false
-          - id: 2
-            value: true
-          - id: 3
-            value: false
-          - id: 4
-            value: false
-          - id: 5
-            value: true
+
     steps:
       - name: Run step
         run: |
-          echo "Running echo step, id: ${{ matrix.shouldFail.id }} shouldFail: ${{ matrix.shouldFail.value }}"
-          if [ ${{ matrix.shouldFail.value }} = "true" ]; then
-            echo "Error"
-            exit 1
-          else
-            echo "Success"
-            exit 0
-          fi
-  test2:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Last step
-        run: echo "Last step"
+          echo "Running echo step"
