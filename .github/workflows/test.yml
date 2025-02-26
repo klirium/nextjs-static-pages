@@ -13,4 +13,4 @@ jobs:
     steps:
       - name: Run step
         run: |
-          echo "Running echo step"
+          echo "Running echo step: ${{  github.event.inputs.value1 }}"
