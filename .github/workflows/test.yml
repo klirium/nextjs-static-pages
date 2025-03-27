@@ -3,9 +3,9 @@ on:
 
 jobs:
   test:
+    environment: development
     runs-on: ubuntu-latest
-
     steps:
       - name: Run step
         run: |
-          echo "Running echo step 1111: ${{  github.event.inputs.value2 }}"
+          echo "Running echo step 1111:"
